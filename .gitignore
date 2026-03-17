@@ -1,0 +1,45 @@
+# === Eclipse / IDE files ===
+.classpath
+.project
+.settings/
+.metadata/
+bin/
+tmp/
+
+# === Maven build directories ===
+target/
+logs/
+reports/
+test-output/
+surefire-reports/
+failsafe-reports/
+
+# === IntelliJ IDEA (if someone else uses it) ===
+.idea/
+*.iml
+out/
+
+# === Gradle (optional if someone switches build tools) ===
+.gradle/
+build/
+
+# === System files ===
+.DS_Store
+Thumbs.db
+
+# === Environment / Temporary files ===
+*.tmp
+*.swp
+*.bak
+
+# === Test data ===
+/test-results/
+/api-test-results/
+/screenshots/
+/json-reports/
+/html-reports/
+
+# === JARs, WARs, etc. (should be built, not stored) ===
+*.jar
+*.war
+*.ear
