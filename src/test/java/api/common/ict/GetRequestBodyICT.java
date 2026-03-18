@@ -8,13 +8,13 @@ import org.json.JSONObject;
 
 public class GetRequestBodyICT {
 
- public static JSONObject getCreateAlarmRequestBody() throws IOException {
+ public static JSONObject getUpdateChairAlarmSettingsRequestBody() throws IOException {
 		 
 	     String env = System.getProperty("env", "acceptance").toLowerCase();
 	        String requestBodyFile;
 
 	       if(env.equals("acceptance")) {
-	            requestBodyFile = "src/test/resources/accRequestBody/createAlarmRequestBody_Acc.json";
+	            requestBodyFile = "src/test/resources/accRequestBodyICT/updateChairAlarmSettingsRequestBody_Acc.json";
 	        } else {
 	            throw new RuntimeException("Unknown environment: " + env);
 	        }
@@ -22,4 +22,50 @@ public class GetRequestBodyICT {
 	        String jsonContent = new String(Files.readAllBytes(Paths.get(requestBodyFile)));
 	        return new JSONObject(jsonContent);
 	    }
+ 
+ public static JSONObject getUpdateBedAlarmSettingsRequestBody() throws IOException {
+	 
+     String env = System.getProperty("env", "acceptance").toLowerCase();
+        String requestBodyFile;
+
+       if(env.equals("acceptance")) {
+            requestBodyFile = "src/test/resources/accRequestBodyICT/updateBedAlarmSettingsRequestBody_Acc.json";
+        } else {
+            throw new RuntimeException("Unknown environment: " + env);
+        }
+
+        String jsonContent = new String(Files.readAllBytes(Paths.get(requestBodyFile)));
+        return new JSONObject(jsonContent);
+    }
+ public static JSONObject getHardwareMeasurementSubmissionRequestBodyForStDoorOpen() throws IOException {
+	 
+     String env = System.getProperty("env", "acceptance").toLowerCase();
+      String requestBodyFile;
+
+       if(env.equals("acceptance")) {
+          requestBodyFile = "src/test/resources/accRequestBodyICT/hardwareMeasurementsSubmissionReqBody_acc.json";
+      } else {
+          throw new RuntimeException("Unknown environment: " + env);
+      }
+
+      String jsonContent = new String(Files.readAllBytes(Paths.get(requestBodyFile)));
+      return new JSONObject(jsonContent);
+  }
+ 
+ public static JSONObject getRegisterForV4StreamingData() throws IOException {
+	 
+	   String env = System.getProperty("env", "acceptance").toLowerCase();
+	   
+      String requestBodyFile;
+
+      if(env.equals("acceptance")) {
+          requestBodyFile = "src/test/resources/accRequestBodyICT/registerForV4StreamingData.json";
+      } else {
+          throw new RuntimeException("Unknown environment: " + env);
+      }
+
+      String jsonContent = new String(Files.readAllBytes(Paths.get(requestBodyFile)));
+      return new JSONObject(jsonContent); 	 	 
 }
+}
+

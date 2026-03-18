@@ -2,7 +2,7 @@
 <suite name="SensaraAPISuite">
 
 	<listeners>
-		<listener class-name="api.utility.ExtentReportManager" />
+		<listener class-name="api.utility.ict.ExtentReportManager" />
 	</listeners>
 	
 	<test name="API Alarm Tests">
@@ -13,6 +13,7 @@
 		</groups>
 		<classes>
 			<class name="api.tests.ict.OutOfChairAlarm" />
+			<class name="api.tests.ict.OutOfBedAlarm" />
 		</classes>
 	</test>
 	

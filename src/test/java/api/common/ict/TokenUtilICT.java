@@ -20,7 +20,7 @@ public class TokenUtilICT {
 	
 		 String credentialsFile;
            if(env.equals("acceptance")) {
-	            credentialsFile = "testData/accessTokenACCData.json";
+	            credentialsFile = "testDataICT/accessTokenACCData.json";
 	        } else {
 	            throw new RuntimeException("Unknown environment: " + env);
 	        }

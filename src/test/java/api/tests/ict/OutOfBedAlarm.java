@@ -1,6 +1,12 @@
 package api.tests.ict;
 
+import static io.restassured.RestAssured.given;
+
 import java.io.IOException;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
@@ -20,14 +26,9 @@ import api.endpoints.ict.RoutesICT;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
-import static io.restassured.RestAssured.given;
-import java.net.URI;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
 
 @Test(groups = "alarms")
-public class OutOfChairAlarm {
+public class OutOfBedAlarm {
 
 	private String accessToken;
 	public String token;
@@ -47,7 +48,7 @@ public class OutOfChairAlarm {
    @Test(priority=1)
    public void testUpdateAlarmSettings() throws IOException {
 	   
-	   JSONObject requestBody = GetRequestBodyICT.getUpdateChairAlarmSettingsRequestBody();
+	   JSONObject requestBody = GetRequestBodyICT.getUpdateBedAlarmSettingsRequestBody();
 	   String residentId = GetTestDataICT.getCommonValue("residentId");
 	   
 	   Response response = given()
@@ -64,7 +65,7 @@ public class OutOfChairAlarm {
 	   
 }
    
-   @Test(dataProvider = "OutOfChairAlarm",
+   @Test(dataProvider = "OutOfBedAlarm",
 		    dataProviderClass = GetTestDataICT.class, priority=2)
   public void testHardwareMeasurementSubmission(JSONObject data) throws IOException, InterruptedException {
 	   
@@ -94,9 +95,8 @@ public class OutOfChairAlarm {
               .then()
               .statusCode(202)
               .extract().response();
-	         
 	         Thread.sleep(20000);
-	                
+	        
   }
    
    @Test(priority=3)
@@ -126,7 +126,7 @@ public class OutOfChairAlarm {
    
    
    
-   @Test(dataProvider = "OutOfChairAlarmFalse",
+   @Test(dataProvider = "OutOfBedAlarmFalse",
 		    dataProviderClass = GetTestDataICT.class, priority=4)
  public void testHardwareMeasurementSubmissionFrontDoor(JSONObject data) throws IOException, InterruptedException {
 	   
@@ -179,7 +179,7 @@ public class OutOfChairAlarm {
 	            .body()
 	            .takeWhile(line -> {
 	                System.out.println("SSE >> " + line);
-	                return !line.contains("OUT_OF_CHAIR");
+	                return !line.contains("OUT_OF_BED");
 	            })
 	            .forEach(l -> {});
 	  
@@ -191,3 +191,4 @@ public class OutOfChairAlarm {
  		 TokenUtilICT.revokeAccessToken();
  	  }
  }
+

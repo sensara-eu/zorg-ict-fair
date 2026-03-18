@@ -1,0 +1,12 @@
+{
+  "alarmType": "OutOfChair",
+  "enabled": true,
+  "activeEntireDay": true,
+  "activePeriods": [
+    {
+      "startTime": "23:00",
+      "endTime": "22:00"
+    }
+  ],
+  "delaySeconds": 60
+}

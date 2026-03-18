@@ -1,0 +1,16 @@
+{
+"dataTypeRequests": [
+    {
+      "dataType": "AlarmEvent",
+      "filters": [
+        {
+          "filterProperty": "residentId",
+          "filterValues": [
+            "c6a26cf8-21d1-4515-8b61-92c616134f84"
+          ]
+        }
+      ]
+    }
+  ],
+  "maxFlowRateMillis": 100
+}
