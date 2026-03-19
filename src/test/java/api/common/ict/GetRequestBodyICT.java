@@ -37,7 +37,7 @@ public class GetRequestBodyICT {
         String jsonContent = new String(Files.readAllBytes(Paths.get(requestBodyFile)));
         return new JSONObject(jsonContent);
     }
- public static JSONObject getHardwareMeasurementSubmissionRequestBodyForStDoorOpen() throws IOException {
+ public static JSONObject getHardwareMeasurementSubmissionRequestBodyForAlarms() throws IOException {
 	 
      String env = System.getProperty("env", "acceptance").toLowerCase();
       String requestBodyFile;
@@ -66,6 +66,22 @@ public class GetRequestBodyICT {
 
       String jsonContent = new String(Files.readAllBytes(Paths.get(requestBodyFile)));
       return new JSONObject(jsonContent); 	 	 
+}
+ 
+ public static JSONObject getCreateSuspiciousAlarmRequestBody() throws IOException {
+	 
+	   String env = System.getProperty("env", "acceptance").toLowerCase();
+	   
+    String requestBodyFile;
+
+    if(env.equals("acceptance")) {
+        requestBodyFile = "src/test/resources/accRequestBodyICT/createSuspiciousInactivityAlarmRequestBody_acc.json";
+    } else {
+        throw new RuntimeException("Unknown environment: " + env);
+    }
+
+    String jsonContent = new String(Files.readAllBytes(Paths.get(requestBodyFile)));
+    return new JSONObject(jsonContent); 	 	 
 }
 }
 

@@ -68,7 +68,7 @@ public class OutOfChairAlarm {
 		    dataProviderClass = GetTestDataICT.class, priority=2)
   public void testHardwareMeasurementSubmission(JSONObject data) throws IOException, InterruptedException {
 	   
-	   JSONObject requestBody = GetRequestBodyICT.getHardwareMeasurementSubmissionRequestBodyForStDoorOpen();
+	   JSONObject requestBody = GetRequestBodyICT.getHardwareMeasurementSubmissionRequestBodyForAlarms();
 	    
 	   String timestamp = ZonedDateTime.now(ZoneId.of("Europe/Amsterdam"))
 		        .truncatedTo(ChronoUnit.SECONDS)
@@ -95,7 +95,7 @@ public class OutOfChairAlarm {
               .statusCode(202)
               .extract().response();
 	         
-	         Thread.sleep(20000);
+	         Thread.sleep(10000);
 	                
   }
    
@@ -130,7 +130,7 @@ public class OutOfChairAlarm {
 		    dataProviderClass = GetTestDataICT.class, priority=4)
  public void testHardwareMeasurementSubmissionFrontDoor(JSONObject data) throws IOException, InterruptedException {
 	   
-	   JSONObject requestBody = GetRequestBodyICT.getHardwareMeasurementSubmissionRequestBodyForStDoorOpen();
+	   JSONObject requestBody = GetRequestBodyICT.getHardwareMeasurementSubmissionRequestBodyForAlarms();
 	    
 	   String timestamp = ZonedDateTime.now(ZoneId.of("Europe/Amsterdam"))
 		        .truncatedTo(ChronoUnit.SECONDS)

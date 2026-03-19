@@ -37,10 +37,10 @@ public class RoutesICT {
         }    
         }
 	
-	public static String updateAlarmSettings_url = base_url+ "/v3alpha/alarmsettings/{residentId}";
-	 public static String createAlarm_url = base_url+ "/v3/alarms/create";
+	 public static String updateAlarmSettings_url = base_url+ "/v3alpha/alarmsettings/{residentId}";
 	 public static String hardwareMeasurementSubmission_url = base_url+ "/v3/hardware/measurements";
 	 public static String registerForV4StreamingData_url = base_url+ "/v4/streams";
 	 public static String receiveSSEForRegistrationToken_url = base_url+ "/v4/streams/{token}/data";
+	 public static String createAnAlarm_url = base_url+ "/v3/alarms/create";
 	
 }

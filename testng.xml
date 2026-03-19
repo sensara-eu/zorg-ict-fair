@@ -14,6 +14,7 @@
 		<classes>
 			<class name="api.tests.ict.OutOfChairAlarm" />
 			<class name="api.tests.ict.OutOfBedAlarm" />
+			<class name="api.tests.ict.FallDetectionSuspiciousInactivityAlarm"/>
 		</classes>
 	</test>
 	
