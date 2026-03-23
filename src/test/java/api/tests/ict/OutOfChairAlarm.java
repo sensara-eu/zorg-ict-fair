@@ -120,7 +120,7 @@ public class OutOfChairAlarm {
 	   token = response.asString().trim();
 	   System.out.println("Token extracted: " + token);
 	   
-	   Thread.sleep(120000);
+	   Thread.sleep(70000);
 	 
    }
    

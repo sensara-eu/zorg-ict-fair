@@ -7,6 +7,16 @@
 	"OutOfChairAlarm": [
 	 {
 	 "gatewayId": "4a62b3fc-dbf1-4827-a9a7-8e1b956948d2",
+	 "deviceId": "VIRTUAL-KIXpwFqLmKK9m5fZh0P0ZycBBUyk",
+	 "value": "true"
+	 },
+	 {
+	 "gatewayId": "4a62b3fc-dbf1-4827-a9a7-8e1b956948d2",
+	 "deviceId": "VIRTUAL-KIXpwFqLmKK9m5fZh0P0ZycBBUyk",
+	 "value": "false"	  
+	 },
+	 {
+	 "gatewayId": "4a62b3fc-dbf1-4827-a9a7-8e1b956948d2",
 	 "deviceId": "VIRTUAL-6g0YESEEN5Metg8LYsOYqECih2uY",
 	 "value": "true"
 	 }
@@ -19,6 +29,16 @@
 	  }	
 	],
 	"OutOfBedAlarm": [
+	 {
+	  "gatewayId": "4a62b3fc-dbf1-4827-a9a7-8e1b956948d2",
+	  "deviceId": "VIRTUAL-KIXpwFqLmKK9m5fZh0P0ZycBBUyk",
+	  "value": "true"
+	 },
+	 {
+	  "gatewayId": "4a62b3fc-dbf1-4827-a9a7-8e1b956948d2",
+	  "deviceId": "VIRTUAL-KIXpwFqLmKK9m5fZh0P0ZycBBUyk",
+	  "value": "false"
+	 },
 	{
 	  "gatewayId": "4a62b3fc-dbf1-4827-a9a7-8e1b956948d2",
 	  "deviceId": "VIRTUAL-CdBLMcqniPePmxJeKzXQw9y8yFtL",
