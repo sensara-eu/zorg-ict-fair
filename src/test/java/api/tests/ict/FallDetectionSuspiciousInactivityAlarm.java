@@ -37,7 +37,9 @@ public class FallDetectionSuspiciousInactivityAlarm {
     }
    
    @Test(priority=1)
-   public void testGenerateSuspiciousInactivityAlarm() throws IOException {
+   public void testGenerateSuspiciousInactivityAlarm() throws IOException, InterruptedException {
+	   
+	   Thread.sleep(30000);
 	   
 	   JSONObject requestBody = GetRequestBodyICT.getCreateSuspiciousAlarmRequestBody();
 	   
