@@ -83,5 +83,35 @@ public class GetRequestBodyICT {
     String jsonContent = new String(Files.readAllBytes(Paths.get(requestBodyFile)));
     return new JSONObject(jsonContent); 	 	 
 }
+ public static JSONObject getOutOfBedAlarmRequestBody() throws IOException {
+	 
+	   String env = System.getProperty("env", "acceptance").toLowerCase();
+	   
+  String requestBodyFile;
+
+  if(env.equals("acceptance")) {
+      requestBodyFile = "src/test/resources/accRequestBodyICT/createOutOfBedAlarmRequestBody.json";
+  } else {
+      throw new RuntimeException("Unknown environment: " + env);
+  }
+
+  String jsonContent = new String(Files.readAllBytes(Paths.get(requestBodyFile)));
+  return new JSONObject(jsonContent); 	 	 
+}
+ public static JSONObject getOutOfChairAlarmRequestBody() throws IOException {
+	 
+	   String env = System.getProperty("env", "acceptance").toLowerCase();
+	   
+  String requestBodyFile;
+
+  if(env.equals("acceptance")) {
+      requestBodyFile = "src/test/resources/accRequestBodyICT/createOutOfChairAlarmRequestBody.json";
+  } else {
+      throw new RuntimeException("Unknown environment: " + env);
+  }
+
+  String jsonContent = new String(Files.readAllBytes(Paths.get(requestBodyFile)));
+  return new JSONObject(jsonContent); 	 	 
+}
 }
 
