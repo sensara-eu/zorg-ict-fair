@@ -16,7 +16,6 @@ import api.common.ict.TokenUtilICT;
 import api.endpoints.ict.RoutesICT;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
-import io.restassured.response.Response;
 
 @Test(groups = "alarms")
 public class FallDetectionSuspiciousInactivityAlarm {
@@ -39,11 +38,11 @@ public class FallDetectionSuspiciousInactivityAlarm {
    @Test(priority=1)
    public void testGenerateSuspiciousInactivityAlarm() throws IOException, InterruptedException {
 	   
-	   Thread.sleep(10000);
+	   Thread.sleep(20000);
 	   
 	   JSONObject requestBody = GetRequestBodyICT.getCreateSuspiciousAlarmRequestBody();
 	   
-	   Response response = given()
+	           given()
 	           .header("Authorization", "Bearer " + accessToken)
                .header("Accept", "application/json")
                .contentType(ContentType.JSON) 
@@ -52,7 +51,7 @@ public class FallDetectionSuspiciousInactivityAlarm {
                .then() .statusCode(200)
                .extract().response();
 
-    System.out.println("Response Body:\n" + response.asPrettyString());
+	   System.out.println("Fall Detection Alarm generated successfully" );
 	     
    }
    

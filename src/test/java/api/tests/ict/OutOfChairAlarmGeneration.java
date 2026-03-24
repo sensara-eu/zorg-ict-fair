@@ -16,7 +16,6 @@ import api.common.ict.TokenUtilICT;
 import api.endpoints.ict.RoutesICT;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
-import io.restassured.response.Response;
 
 @Test(groups = "alarms")
 public class OutOfChairAlarmGeneration {
@@ -39,11 +38,11 @@ public class OutOfChairAlarmGeneration {
    @Test(priority=1)
    public void testGenerateOutOfChairAlarm() throws IOException, InterruptedException {
 	   
-	   Thread.sleep(10000);
+	   Thread.sleep(20000);
 	   
 	   JSONObject requestBody = GetRequestBodyICT.getOutOfChairAlarmRequestBody();
 	   
-	   Response response = given()
+	           given()
 	           .header("Authorization", "Bearer " + accessToken)
                .header("Accept", "application/json")
                .contentType(ContentType.JSON) 
@@ -51,7 +50,8 @@ public class OutOfChairAlarmGeneration {
                .post(RoutesICT.createAnAlarm_url) 
                .then() .statusCode(200)
                .extract().response();
-
+	   
+	   System.out.println("Out Of Chair Alarm generated successfully" );
 	     
    }
    

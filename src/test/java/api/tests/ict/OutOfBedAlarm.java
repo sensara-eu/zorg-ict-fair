@@ -46,7 +46,9 @@ public class OutOfBedAlarm {
     }
    
    @Test(priority=1)
-   public void testUpdateAlarmSettings() throws IOException {
+   public void testUpdateAlarmSettings() throws IOException, InterruptedException {
+	   
+	   Thread.sleep(20000);
 	   
 	   JSONObject requestBody = GetRequestBodyICT.getUpdateBedAlarmSettingsRequestBody();
 	   String residentId = GetTestDataICT.getCommonValue("residentId");

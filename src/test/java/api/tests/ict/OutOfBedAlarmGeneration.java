@@ -16,7 +16,6 @@ import api.common.ict.TokenUtilICT;
 import api.endpoints.ict.RoutesICT;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
-import io.restassured.response.Response;
 
 @Test(groups = "alarms")
 public class OutOfBedAlarmGeneration {
@@ -39,11 +38,11 @@ public class OutOfBedAlarmGeneration {
    @Test(priority=1)
    public void testGenerateOutOfBedAlarm() throws IOException, InterruptedException {
 	   
-	   Thread.sleep(10000);
+	   Thread.sleep(20000);
 	   
 	   JSONObject requestBody = GetRequestBodyICT.getOutOfBedAlarmRequestBody();
 	   
-	   Response response = given()
+	          given()
 	           .header("Authorization", "Bearer " + accessToken)
                .header("Accept", "application/json")
                .contentType(ContentType.JSON) 
@@ -51,8 +50,9 @@ public class OutOfBedAlarmGeneration {
                .post(RoutesICT.createAnAlarm_url) 
                .then() .statusCode(200)
                .extract().response();
+	   
 
-   
+	   System.out.println("Out Of Bed Alarm generated successfully" );
 	     
    }
    
