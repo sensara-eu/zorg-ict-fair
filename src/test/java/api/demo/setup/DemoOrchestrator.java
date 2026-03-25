@@ -18,7 +18,7 @@ public class DemoOrchestrator {
 
             // --- Out of Bed ---
             System.out.println(java.time.LocalTime.now() +" Playing: Out Of Bed Video");
-            playVideoWithAlarm("OutOfBed.mp4",2000, () -> {
+            playVideoWithAlarm("OutOfBed.mp4",5000, () -> {
 				try {
 					OutOfBedAlarmVideoGeneration.trigger();
 				} catch (IOException  | InterruptedException e) {
@@ -28,7 +28,7 @@ public class DemoOrchestrator {
 
             // --- Out of Chair ---
             System.out.println(java.time.LocalTime.now() +" Playing: Out Of Chair Video");
-            playVideoWithAlarm("OutOfChair.mp4",2000, () -> {
+            playVideoWithAlarm("OutOfChair.mp4",5000, () -> {
 				try {
 					OutOfChairAlarmVideoGeneration.trigger();
 				} catch (IOException | InterruptedException e) {
@@ -38,7 +38,7 @@ public class DemoOrchestrator {
 
             // --- Fall Detection ---
             System.out.println(java.time.LocalTime.now() +" Playing: Fall Detection Video");
-            playVideoWithAlarm("fall_detection.mp4",2000, () -> {
+            playVideoWithAlarm("fall_detection.mp4",5000, () -> {
 				try {
 					FallDetectionAlarmVideoGeneration.trigger();
 				} catch (IOException | InterruptedException e) {
@@ -52,7 +52,7 @@ public class DemoOrchestrator {
     }
 
     /**
-     * Play video and trigger alarm while it plays
+     * Play video and trigger alarm after 5 seconds while it plays
      */
     private static void playVideoWithAlarm(String videoFileName,long delayMs, Runnable alarmTrigger) {
         try {
@@ -66,7 +66,7 @@ public class DemoOrchestrator {
             Process process = Runtime.getRuntime().exec(command);
            
 
-            // Trigger alarm immediately while video plays
+            // Trigger alarm (after 5 seconds) while video plays
             new Thread(() -> {
                 try {
                     alarmTrigger.run();
