@@ -38,7 +38,7 @@ public class OutOfChairAlarmGeneration {
    @Test(priority=1)
    public void testGenerateOutOfChairAlarm() throws IOException, InterruptedException {
 	   
-	   Thread.sleep(20000);
+	   Thread.sleep(10000);
 	   
 	   JSONObject requestBody = GetRequestBodyICT.getOutOfChairAlarmRequestBody();
 	   

@@ -38,7 +38,7 @@ public class OutOfBedAlarmGeneration {
    @Test(priority=1)
    public void testGenerateOutOfBedAlarm() throws IOException, InterruptedException {
 	   
-	   Thread.sleep(20000);
+	   Thread.sleep(10000);
 	   
 	   JSONObject requestBody = GetRequestBodyICT.getOutOfBedAlarmRequestBody();
 	   
