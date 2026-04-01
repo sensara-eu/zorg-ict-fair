@@ -28,7 +28,7 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 
 @Test(groups = "alarms")
-public class OutOfBedAlarm {
+public class OutOfBedAlarmStatusGeneration {
 
 	private String accessToken;
 	public String token;

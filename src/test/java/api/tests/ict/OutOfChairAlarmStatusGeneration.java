@@ -27,7 +27,7 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 @Test(groups = "alarms")
-public class OutOfChairAlarm {
+public class OutOfChairAlarmStatusGeneration {
 
 	private String accessToken;
 	public String token;
