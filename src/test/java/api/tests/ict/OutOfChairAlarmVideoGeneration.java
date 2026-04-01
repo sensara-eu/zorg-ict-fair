@@ -26,7 +26,7 @@ public class OutOfChairAlarmVideoGeneration {
         RestAssured.baseURI = RoutesICT.base_url;
         RestAssured.enableLoggingOfRequestAndResponseIfValidationFails();
         System.setProperty("io.restassured.json.schema.validation.report.format", "detailed");
-        logger = LogManager.getLogger(OutOfChairAlarmGeneration.class);
+        logger = LogManager.getLogger(OutOfChairAlarmVideoGeneration.class);
     }
 
     public static void tearDown() {

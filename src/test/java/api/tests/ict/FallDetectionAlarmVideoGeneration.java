@@ -26,7 +26,7 @@ public class FallDetectionAlarmVideoGeneration {
         RestAssured.baseURI = RoutesICT.base_url;
         RestAssured.enableLoggingOfRequestAndResponseIfValidationFails();
         System.setProperty("io.restassured.json.schema.validation.report.format", "detailed");
-        logger = LogManager.getLogger(FallDetectionSuspiciousInactivityAlarm.class);
+        logger = LogManager.getLogger(FallDetectionAlarmVideoGeneration.class);
     }
 
     public static void tearDown() {
