@@ -181,6 +181,63 @@ public class GetTestDataICT {
 
         return data;
     }
+    
+    public static Object[][] getOutOfBedAlarmData() throws IOException {
+
+        JSONObject testData = getTestData();
+        JSONArray jsonArray = testData.getJSONArray("OutOfBedAlarm");
+
+        Object[][] data = new Object[jsonArray.length()][1];
+
+        for (int i = 0; i < jsonArray.length(); i++) {
+            data[i][0] = jsonArray.getJSONObject(i);
+        }
+
+        return data;
+    }
+    
+    public static Object[][] getOutOfBedAlarmFalseData() throws IOException {
+
+        JSONObject testData = getTestData();
+        JSONArray jsonArray = testData.getJSONArray("OutOfBedAlarmFalse");
+
+        Object[][] data = new Object[jsonArray.length()][1];
+
+        for (int i = 0; i < jsonArray.length(); i++) {
+            data[i][0] = jsonArray.getJSONObject(i);
+        }
+
+        return data;
+    }
+    
+    public static Object[][] getOutOfChairAlarmData() throws IOException {
+
+        JSONObject testData = getTestData();
+        JSONArray jsonArray = testData.getJSONArray("OutOfChairAlarm");
+
+        Object[][] data = new Object[jsonArray.length()][1];
+
+        for (int i = 0; i < jsonArray.length(); i++) {
+            data[i][0] = jsonArray.getJSONObject(i);
+        }
+
+        return data;
+    }
+    
+    public static Object[][] getOutOfChairAlarmFalseData() throws IOException {
+
+        JSONObject testData = getTestData();
+        JSONArray jsonArray = testData.getJSONArray("OutOfChairAlarmFalse");
+
+        Object[][] data = new Object[jsonArray.length()][1];
+
+        for (int i = 0; i < jsonArray.length(); i++) {
+            data[i][0] = jsonArray.getJSONObject(i);
+        }
+
+        return data;
+    }
+
 
 
 }

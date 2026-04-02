@@ -1,0 +1,19 @@
+{
+  "timestamp": "",
+  "realm": "KADEX",
+  "gateway": {
+    "id": ""
+  },
+  "device": {
+    "id": ""
+  },
+  "measurements": [
+    {
+      "type": "SensorBooleanValue",
+      "value": "",
+      "output": {
+        "id": "0"
+      }
+    }
+  ]
+}

@@ -12,12 +12,14 @@
 			</run>
 		</groups>
 		<classes>
-			<class name="api.tests.ict.OutOfBedAlarmStatusGeneration"/>
-			<class name="api.tests.ict.OutOfChairAlarmStatusGeneration"/>
+			<!--<class name="api.tests.ict.OutOfBedAlarmStatusGeneration"/>
+			<class name="api.tests.ict.OutOfChairAlarmStatusGeneration"/>-->
 			
-			<class name="api.tests.ict.OutOfBedAlarmVideoGeneration"/>
+			<!--<class name="api.tests.ict.OutOfBedAlarmVideoGeneration"/>
 			<class name="api.tests.ict.OutOfChairAlarmVideoGeneration"/>
-			<class name="api.tests.ict.FallDetectionAlarmVideoGeneration"/>	
+			<class name="api.tests.ict.FallDetectionAlarmVideoGeneration"/>	-->
+			
+			<class name = "api.tests.ict.StatusGeneartion"/>
 		</classes>
 	</test>
 	

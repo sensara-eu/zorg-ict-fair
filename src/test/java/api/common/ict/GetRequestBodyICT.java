@@ -37,20 +37,7 @@ public class GetRequestBodyICT {
         String jsonContent = new String(Files.readAllBytes(Paths.get(requestBodyFile)));
         return new JSONObject(jsonContent);
     }
- public static JSONObject getHardwareMeasurementSubmissionRequestBodyForAlarms() throws IOException {
-	 
-     String env = System.getProperty("env", "acceptance").toLowerCase();
-      String requestBodyFile;
 
-       if(env.equals("acceptance")) {
-          requestBodyFile = "src/test/resources/accRequestBodyICT/hardwareMeasurementsSubmissionReqBody_acc.json";
-      } else {
-          throw new RuntimeException("Unknown environment: " + env);
-      }
-
-      String jsonContent = new String(Files.readAllBytes(Paths.get(requestBodyFile)));
-      return new JSONObject(jsonContent);
-  }
  
  public static JSONObject getRegisterForV4StreamingData() throws IOException {
 	 
@@ -113,5 +100,34 @@ public class GetRequestBodyICT {
   String jsonContent = new String(Files.readAllBytes(Paths.get(requestBodyFile)));
   return new JSONObject(jsonContent); 	 	 
 }
+ 
+ public static JSONObject getOutOfChairHardwareMeasurementSubmissionRequestBodyForAlarms() throws IOException {
+	 
+     String env = System.getProperty("env", "acceptance").toLowerCase();
+      String requestBodyFile;
+
+       if(env.equals("acceptance")) {
+          requestBodyFile = "src/test/resources/accRequestBodyICT/outOfChairHardwareMeasurementsSubmissionReqBody_acc.json";
+      } else {
+          throw new RuntimeException("Unknown environment: " + env);
+      }
+
+      String jsonContent = new String(Files.readAllBytes(Paths.get(requestBodyFile)));
+      return new JSONObject(jsonContent);
+  }
+ public static JSONObject getOutOfBedHardwareMeasurementSubmissionRequestBodyForAlarms() throws IOException {
+	 
+     String env = System.getProperty("env", "acceptance").toLowerCase();
+      String requestBodyFile;
+
+       if(env.equals("acceptance")) {
+          requestBodyFile = "src/test/resources/accRequestBodyICT/outOfBedHardwareMeasurementsSubmissionReqBody_acc.json";
+      } else {
+          throw new RuntimeException("Unknown environment: " + env);
+      }
+
+      String jsonContent = new String(Files.readAllBytes(Paths.get(requestBodyFile)));
+      return new JSONObject(jsonContent);
+  }
 }
 
