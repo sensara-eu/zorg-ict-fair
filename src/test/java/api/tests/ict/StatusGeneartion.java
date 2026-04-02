@@ -148,7 +148,7 @@ public class StatusGeneartion {
 						.body(requestBody.toString()).when().post(RoutesICT.hardwareMeasurementSubmission_url).then().statusCode(202);
 
 				System.out.println("✅ Resident state changed from In room to In chair");
-				Thread.sleep(7700);
+				Thread.sleep(5000);
 								
 
 			JSONObject requestBody5 = GetRequestBodyICT.getOutOfChairHardwareMeasurementSubmissionRequestBodyForAlarms();

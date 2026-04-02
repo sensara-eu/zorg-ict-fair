@@ -75,7 +75,6 @@ public class DemoOrchestrator {
             // Start VLC process
             Process process = Runtime.getRuntime().exec(command);
 
-            // Trigger alarm after delay in a separate thread
             new Thread(() -> {
                 try {
                     Thread.sleep(delayMs);
