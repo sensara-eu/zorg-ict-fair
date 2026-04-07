@@ -73,7 +73,7 @@ public class StatusGeneartion {
 					.statusCode(202);
 
 			   System.out.println("✅ Resident state changed from In room to In chair");
-			   Thread.sleep(18000);
+			   Thread.sleep(19000);
 		       
 	
 
@@ -91,7 +91,7 @@ public class StatusGeneartion {
 					.statusCode(202);
 			   
 			   System.out.println("✅ Resident state changed from In chair to In room");
-			   Thread.sleep(25000);
+			   Thread.sleep(29000);
 			
 			  
 		
@@ -111,7 +111,7 @@ public class StatusGeneartion {
 			            .when() .post(RoutesICT.hardwareMeasurementSubmission_url).then().statusCode(202).extract().response();
 			    System.out.println("✅ Resident state changed from In room to In bed");
 			         
-			    Thread.sleep(25000);		
+			    Thread.sleep(37000);		
 		
 			    
 
@@ -130,7 +130,7 @@ public class StatusGeneartion {
 		  		   .when().post(RoutesICT.hardwareMeasurementSubmission_url).then() .statusCode(202).extract().response();
 			    
 			    System.out.println("✅ Resident state changed from In bed to In room");
-			    Thread.sleep(8000);
+			    Thread.sleep(7000);
 			         
 			   
 			         
@@ -145,30 +145,11 @@ public class StatusGeneartion {
 				 requestBody4.getJSONArray("measurements").getJSONObject(0).put("value", true);
 
 				given().header("Authorization", "Bearer " + accessToken).contentType(ContentType.JSON)
-						.body(requestBody.toString()).when().post(RoutesICT.hardwareMeasurementSubmission_url).then().statusCode(202);
+						.body(requestBody4.toString()).when().post(RoutesICT.hardwareMeasurementSubmission_url).then().statusCode(202);
 
 				System.out.println("✅ Resident state changed from In room to In chair");
 				Thread.sleep(5000);
-								
-
-			JSONObject requestBody5 = GetRequestBodyICT.getOutOfChairHardwareMeasurementSubmissionRequestBodyForAlarms();
-
-				String timestamp5 = ZonedDateTime.now(ZoneId.of("Europe/Amsterdam")).truncatedTo(ChronoUnit.SECONDS)
-								.format(DateTimeFormatter.ISO_OFFSET_DATE_TIME);
-
-				requestBody5.put("timestamp", timestamp5);
-
-				requestBody5.getJSONObject("gateway").put("id", "4a62b3fc-dbf1-4827-a9a7-8e1b956948d2");
-				requestBody5.getJSONObject("device").put("id", "VIRTUAL-6g0YESEEN5Metg8LYsOYqECih2uY");
-				requestBody5.getJSONArray("measurements").getJSONObject(0).put("value",  false);
-
-				given().header("Authorization", "Bearer " + accessToken).contentType(ContentType.JSON)
-								.body(requestBody1.toString()).when().post(RoutesICT.hardwareMeasurementSubmission_url).then().statusCode(202);
-				System.out.println("✅ Resident state changed from In chair to In room");
-				Thread.sleep(20000);
-						
-			    
-					
+									
 
 		}
 		

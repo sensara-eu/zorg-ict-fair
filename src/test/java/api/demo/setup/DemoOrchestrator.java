@@ -17,7 +17,7 @@ public class DemoOrchestrator {
 
             // --- Out of Bed ---
             System.out.println(java.time.LocalTime.now() + " Playing: Out Of Bed Video");
-            playVideoWithAlarm("OutOfBed.mp4", 13000, () -> {
+            playVideoWithAlarm("OutOfBed.mp4", 11000, () -> {
                 try {
                     OutOfBedAlarmVideoGeneration.trigger();
                 } catch (Exception e) {
@@ -25,29 +25,32 @@ public class DemoOrchestrator {
                 }
             });
 
-            // --- Out of Chair ---
+			
+			  // --- Out of Chair --- 
             System.out.println(java.time.LocalTime.now() + " Playing: Out Of Chair Video");
-            playVideoWithAlarm("OutOfChair.mp4", 13000, () -> {
-                try {
-                    OutOfChairAlarmVideoGeneration.trigger();
-                } catch (IOException | InterruptedException e) {
-                    e.printStackTrace();
-                }
-            });
-
-            // --- Fall Detection ---
-            System.out.println(java.time.LocalTime.now() + " Playing: Fall Detection Video");
-            playVideoWithAlarm("fall_detection.mp4", 16000, () -> {
-                try {
-                    FallDetectionAlarmVideoGeneration.trigger();
-                } catch (IOException | InterruptedException e) {
-                    e.printStackTrace();
-                }
-            });
+            playVideoWithAlarm("OutOfChair.mp4", 9000, () -> { 
+            	try { 
+            		OutOfChairAlarmVideoGeneration.trigger();
+            		} catch (IOException | InterruptedException e){ 
+            		    e.printStackTrace();
+            		    } 
+            	});
+			  
+			  // --- Fall Detection --- 
+            System.out.println(java.time.LocalTime.now() + " Playing: Fall Detection Video"); 
+            playVideoWithAlarm("fallDetection.mp4", 8000, () -> {
+            	try { 
+            		FallDetectionAlarmVideoGeneration.trigger(); 
+            		} catch (IOException | InterruptedException e) { 
+            			e.printStackTrace();
+            			} 
+            	});
+			 
             
             // ---Status Generation---
+            
             System.out.println(java.time.LocalTime.now() + " Playing: Status Generation Video");
-            playVideoWithAlarm("statusGenerationLoop.mp4", 16000, () -> {
+            playVideoWithAlarm("statusGenerationLoop.mp4", 1000, () -> {
                 try {
                 	StatusGeneartion.trigger();
                 } catch (IOException | InterruptedException e) {
